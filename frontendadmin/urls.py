@@ -1,4 +1,7 @@
-from django.conf.urls.defaults import *
+try:
+    from django.conf.urls.defaults import *
+except:
+    from django.conf.urls import *
 from frontendadmin.views import add, change, delete, success, success_delete
 from django.views.decorators.cache import never_cache
 
