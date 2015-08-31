@@ -40,7 +40,7 @@ def frontendadmin_change(context, model_object, label=None):
  
     # Check if `model_object` is a model-instance
     if not isinstance(model_object, Model):
-        raise template.TemplateSyntaxError, "'%s' argument must be a model-instance" % model_object
+        raise template.TemplateSyntaxError("'%s' argument must be a model-instance" % model_object)
  
     app_label = model_object._meta.app_label
     model_name = model_object._meta.module_name
