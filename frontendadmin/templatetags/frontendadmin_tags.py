@@ -11,7 +11,7 @@ def frontendadmin_add(context, queryset_object, label=None):
  
     # Check if `queryset_object` is a queryset
     if not isinstance(queryset_object, QuerySet):
-        raise template.TemplateSyntaxError, "'%s' argument must be a queryset" % queryset_object
+        raise template.TemplateSyntaxError("'%s' argument must be a queryset" % queryset_object)
  
     app_label = queryset_object.model._meta.app_label
     model_name = queryset_object.model._meta.module_name
