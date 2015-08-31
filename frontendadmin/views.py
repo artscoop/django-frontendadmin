@@ -16,7 +16,7 @@ from django.conf import settings
 from django.forms import CharField
 from django.contrib import messages
 
-from forms import DeleteRequestForm, FrontendAdminModelForm
+from .forms import DeleteRequestForm, FrontendAdminModelForm
 
 
 EXCLUDES = getattr(settings, 'FRONTEND_EXCLUDES', {})
