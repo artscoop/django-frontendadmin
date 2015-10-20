@@ -17,7 +17,11 @@ from django.template.loader import get_template
 from django.template import TemplateDoesNotExist
 from django.utils.translation import ugettext as _
 from django.views.decorators.cache import never_cache
-from django.utils.importlib import import_module
+try:
+    # For old versions of Django supporting py2.6
+    from django.utils.importlib import import_module
+except ImportError:
+    from importlib import import_module
 from django.conf import settings
 from django.forms import CharField
 from django.contrib import messages
