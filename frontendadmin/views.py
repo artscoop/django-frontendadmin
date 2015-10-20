@@ -7,7 +7,8 @@ try:
     from django.db.models import get_model
 except ImportError:
     # Only from Django 1.9 onwards
-    from django.apps.apps import get_model
+    from django.apps import apps
+    get_model = apps.get_model
 from django.forms.models import modelform_factory
 from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.shortcuts import render_to_response
