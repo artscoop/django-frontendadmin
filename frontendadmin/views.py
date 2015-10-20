@@ -2,7 +2,12 @@
 from django.contrib.admin import site
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-from django.db.models import get_model
+try:
+    # Not supported after Django 1.8
+    from django.db.models import get_model
+except ImportError:
+    # Only from Django 1.9 onwards
+    from django.apps.apps import get_model
 from django.forms.models import modelform_factory
 from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.shortcuts import render_to_response
