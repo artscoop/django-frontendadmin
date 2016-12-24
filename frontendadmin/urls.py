@@ -1,11 +1,14 @@
+# coding: utf-8
 try:
     from django.conf.urls.defaults import *
 except:
     from django.conf.urls import *
+
 from frontendadmin.views import add, change, delete, success, success_delete
 from django.views.decorators.cache import never_cache
 
-urlpatterns = patterns('',
+
+urlpatterns = [
     url(r'^add/(?P<app_label>[\w]+)/(?P<model_name>[\w]+)/$',
         never_cache(add),
         name='frontendadmin_add'
@@ -29,5 +32,5 @@ urlpatterns = patterns('',
     url(r'^success_delete/$',
         success_delete,
         name='frontendadmin_success_delete'
-    ),
-)
+    )
+]
